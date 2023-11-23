@@ -1,0 +1,17 @@
+{
+    "cSpell.language": "en,es",
+    "python.analysis.extraPaths": [
+        "./modules"
+    ],
+    "cSpell.words": [
+        "axvline",
+        "figsize",
+        "linestyle",
+        "linewidth",
+        "ncols",
+        "nrows",
+        "semilogx",
+        "xlabel",
+        "ylabel"
+    ],
+}
