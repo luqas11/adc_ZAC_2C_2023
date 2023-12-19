@@ -6,12 +6,12 @@ PLOT_RES = 100000
 
 def plot(sys: signal.lti):
     """Plotea los diagramas de Bode de módulo y fase y las respuestas al impulso y al escalón
-    de una función de transferencia o sistema LTI dado.
+    de un sistema LTI dado.
 
     Parameters
     ----------
     sys : signal.lti
-        Sistema LTI o función de transferencia a plotear
+        Sistema LTI a plotear
     """
     w, mag, phase = sys.bode(n=PLOT_RES)
     ts, ys = sys.step(N=PLOT_RES)
@@ -49,12 +49,12 @@ def plot(sys: signal.lti):
     plt.show()
 
 def plot_zp(sys: signal.lti, ax):
-    """Plotea en el gráfico indicado los polos y ceros de una función de transferencia o sistema LTI dado.
+    """Plotea en el gráfico indicado los polos y ceros de un sistema LTI dado.
 
     Parameters
     ----------
     sys : signal.lti
-        Sistema LTI o función de transferencia para la cual plotear los polos y ceros
+        Sistema LTI para el cual plotear los polos y ceros
     ax : any
         Gráfico sobre el cual plotear
     """
