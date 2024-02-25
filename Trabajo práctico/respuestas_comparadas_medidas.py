@@ -8,9 +8,11 @@ import numpy as np
 
 w = np.logspace(0, 5, num=1000000)
 
+# Función de transferencia del circuito normalizado
 h2 = signal.TransferFunction([2e3, 667e3, 0], [1, 2540, 114e3, 34.3e6])
 w2, mag2, phase2 = h2.bode(w)
 
+# Datos de las mediciones de laboratorio
 w_measured = [10, 30, 100, 300, 1000, 3000, 10000, 18800]
 mag_measured = [-13.8, -2.43, 4.40, 11.1, 4.08, 0.34, -7.13, -10.3]
 

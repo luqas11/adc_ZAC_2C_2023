@@ -8,13 +8,18 @@ from scipy import signal
 import numpy as np
 from helpers import read_csv
 
+# Función de transferencia del circuito teórico
 h1 = signal.TransferFunction([2e3, 600e3, 0], [1, 2540, 114.4e3, 36e6])
+
+# Función de transferencia del circuito normalizado
 h2 = signal.TransferFunction([2e3, 667e3, 0], [1, 2540, 114e3, 34.3e6])
 
 window_size = 0.5
 _, ax = plt.subplots(nrows=4, ncols=1, figsize=(window_size * 16, window_size * 16))
 
+# Datos de la simulación circuital del circuito normalizado
 t_spice, y_spice = read_csv(columns_names=["Tiempo", "Tension"], filename="seno_spice1")
+
 w = 1
 t = np.linspace(0, 10*np.pi/w, num=10000)
 u = np.sin(w*t)
@@ -38,7 +43,9 @@ ax[1].set(xlabel='Tiempo (s)', ylabel='Tensión (V)')
 ax[1].legend(loc='upper right')
 ax[1].set_title('Frecuencia = 1rad/s ($v_o$)')
 
+# Datos de la simulación circuital del circuito normalizado
 t_spice, y_spice = read_csv(columns_names=["Tiempo", "Tension"], filename="seno_spice2")
+
 w = 100
 t = np.linspace(0, 10*np.pi/w, num=10000)
 u = np.sin(w*t)
@@ -54,7 +61,9 @@ ax[2].set(xlabel='Tiempo (s)', ylabel='Tensión (V)')
 ax[2].legend(loc='upper right')
 ax[2].set_title('Frecuencia = 100rad/s')
 
+# Datos de la simulación circuital del circuito normalizado
 t_spice, y_spice = read_csv(columns_names=["Tiempo", "Tension"], filename="seno_spice3")
+
 w = 1000
 t = np.linspace(0, 10*np.pi/w, num=10000)
 u = np.sin(w*t)

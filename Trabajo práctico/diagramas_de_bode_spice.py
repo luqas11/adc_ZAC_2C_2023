@@ -10,18 +10,20 @@ import numpy as np
 
 w = np.logspace(0, 4, num=1000000)
 
+# Datos de la simulación circuital del circuito normalizado
 mag_spice, phase_spice, f_spice = read_csv(columns_names=["Ganancia", "Fase", "Frecuencia"], filename='bodes_spice')
-
 w_spice = f_spice * 2*np.pi
 
+# Función de transferencia del circuito teórico
 h1 = signal.TransferFunction([2e3, 600e3, 0], [1, 2540, 114.4e3, 36e6])
 w1, mag1, phase1 = h1.bode(w)
 
+# Función de transferencia del circuito normalizado
 h2 = signal.TransferFunction([2e3, 667e3, 0], [1, 2540, 114e3, 34.3e6])
 w2, mag2, phase2 = h2.bode(w)
 
 window_size = 0.5
-fig, ax = plt.subplots(nrows=2, ncols=1, figsize=(window_size * 16, window_size * 9))
+_, ax = plt.subplots(nrows=2, ncols=1, figsize=(window_size * 16, window_size * 9))
 
 ax[0].semilogx(w1, mag1, label='$H_{db}$ (teórico)')
 ax[0].semilogx(w2, mag2, label='$H_{db}$ (normalizado)')

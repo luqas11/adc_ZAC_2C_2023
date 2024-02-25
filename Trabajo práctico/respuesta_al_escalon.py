@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Función de respuesta calculada analíticamente
 t = np.linspace(0.0, 0.5, num=10000)
 y = 1.94 * np.exp(-20*t) * np.sin(118*t) + 0.714 * np.exp(-20*t) * np.cos(118*t) - 0.714 * np.exp(-2500*t)
 

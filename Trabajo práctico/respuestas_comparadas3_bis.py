@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from scipy import signal
 import numpy as np
 
+# Función de transferencia del circuito normalizado
 h = signal.TransferFunction([2e3, 667e3, 0], [1, 2540, 114e3, 34.3e6])
 
 window_size = 0.5

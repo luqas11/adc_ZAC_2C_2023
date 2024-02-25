@@ -8,9 +8,11 @@ import numpy as np
 
 w = np.logspace(0, 4, num=1000000)
 
+# Función de transferencia del circuito teórico
 h1 = signal.TransferFunction([2e3, 600e3, 0], [1, 2540, 114.4e3, 36e6])
 w1, mag1, phase1 = h1.bode(w)
 
+# Función de transferencia del circuito normalizado
 h2 = signal.TransferFunction([2e3, 667e3, 0], [1, 2540, 114e3, 34.3e6])
 w2, mag2, phase2 = h2.bode(w)
 

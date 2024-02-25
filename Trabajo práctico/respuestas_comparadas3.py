@@ -6,7 +6,10 @@ import matplotlib.pyplot as plt
 from scipy import signal
 import numpy as np
 
+# Función de transferencia del circuito teórico
 h1 = signal.TransferFunction([2e3, 600e3, 0], [1, 2540, 114.4e3, 36e6])
+
+# Función de transferencia del circuito normalizado
 h2 = signal.TransferFunction([2e3, 667e3, 0], [1, 2540, 114e3, 34.3e6])
 
 window_size = 0.5
