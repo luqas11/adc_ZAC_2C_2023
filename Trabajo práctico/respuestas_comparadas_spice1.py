@@ -1,3 +1,8 @@
+# Comparación de respuestas al escalón de:
+# - El circuito teórico simulado numéricamente con SciPy
+# - El circuito normalizado simulado numéricamente con SciPy
+# - El circuito normalizado simulado circuitalmente con LTspice
+
 import matplotlib.pyplot as plt
 from scipy import signal
 from helpers import read_csv
@@ -13,8 +18,8 @@ fig, ax = plt.subplots(figsize=(window_size * 16, window_size * 9))
 t1, y1 = h1.step(N=100000)
 t2, y2 = h2.step(N=100000)
 
-ax.plot(t1, y1, label='$v_o$ (original)')
-ax.plot(t2, y2, label='$v_o$ (normalizada)')
+ax.plot(t1, y1, label='$v_o$ (teórico)')
+ax.plot(t2, y2, label='$v_o$ (normalizado)')
 ax.plot(t_spice, y_spice, label='$v_o$ (LTspice)')
 ax.grid()
 ax.set(xlabel='Tiempo (s)', ylabel='Tensión (V)')

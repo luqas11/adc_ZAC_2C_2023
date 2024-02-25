@@ -1,3 +1,5 @@
+# Respuesta a una señal senoidal de 1000rad/s del circuito teórico calculada analíticamente.
+
 import matplotlib.pyplot as plt
 import numpy as np
 

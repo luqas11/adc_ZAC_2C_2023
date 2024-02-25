@@ -1,3 +1,8 @@
+# Comparación de señales senoidales de frecuencias 1rad/s, 100rad/s, y 1000rad/s y las respuestas de:
+# - El circuito teórico simulado numéricamente con SciPy
+# - El circuito normalizado simulado numéricamente con SciPy
+# - El circuito normalizado simulado circuitalmente con LTspice
+
 import matplotlib.pyplot as plt
 from scipy import signal
 import numpy as np
@@ -16,8 +21,8 @@ u = np.sin(w*t)
 t1, y1, _ = signal.lsim(h1, U=u, T=t)
 t2, y2, _ = signal.lsim(h2, U=u, T=t)
 
-ax[0].plot(t1, y1, label='$v_o$ (original)')
-ax[0].plot(t2, y2, label='$v_o$ (normalizada)')
+ax[0].plot(t1, y1, label='$v_o$ (teórico)')
+ax[0].plot(t2, y2, label='$v_o$ (normalizado)')
 ax[0].plot(t_spice, y_spice, label='$v_o$ (LTspice)')
 ax[0].plot(t, u, label='$v_i$')
 ax[0].grid()
@@ -25,8 +30,8 @@ ax[0].set(xlabel='Tiempo (s)', ylabel='Tensión (V)')
 ax[0].legend(loc='upper right')
 ax[0].set_title('Frecuencia = 1rad/s ($v_i$ vs. $v_o$)')
 
-ax[1].plot(t1, y1, label='$v_o$ (original)')
-ax[1].plot(t2, y2, label='$v_o$ (normalizada)')
+ax[1].plot(t1, y1, label='$v_o$ (teórico)')
+ax[1].plot(t2, y2, label='$v_o$ (normalizado)')
 ax[1].plot(t_spice, y_spice, label='$v_o$ (LTspice)')
 ax[1].grid()
 ax[1].set(xlabel='Tiempo (s)', ylabel='Tensión (V)')
@@ -40,8 +45,8 @@ u = np.sin(w*t)
 t1, y1, _ = signal.lsim(h1, U=u, T=t)
 t2, y2, _ = signal.lsim(h2, U=u, T=t)
 
-ax[2].plot(t1, y1, label='$v_o$ (original)')
-ax[2].plot(t2, y2, label='$v_o$ (normalizada)')
+ax[2].plot(t1, y1, label='$v_o$ (teórico)')
+ax[2].plot(t2, y2, label='$v_o$ (normalizado)')
 ax[2].plot(t_spice, y_spice, label='$v_o$ (LTspice)')
 ax[2].plot(t, u, label='$v_i$')
 ax[2].grid()
@@ -56,8 +61,8 @@ u = np.sin(w*t)
 t1, y1, _ = signal.lsim(h1, U=u, T=t)
 t2, y2, _ = signal.lsim(h2, U=u, T=t)
 
-ax[3].plot(t1, y1, label='$v_o$ (original)')
-ax[3].plot(t2, y2, label='$v_o$ (normalizada)')
+ax[3].plot(t1, y1, label='$v_o$ (teórico)')
+ax[3].plot(t2, y2, label='$v_o$ (normalizado)')
 ax[3].plot(t_spice, y_spice, label='$v_o$ (LTspice)')
 ax[3].plot(t, u, label='$v_i$')
 ax[3].grid()

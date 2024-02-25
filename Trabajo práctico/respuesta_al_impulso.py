@@ -1,3 +1,5 @@
+# Respuesta al impulso del circuito teórico calculada analíticamente.
+
 import matplotlib.pyplot as plt
 import numpy as np
 
